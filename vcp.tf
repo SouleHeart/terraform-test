@@ -1,19 +1,16 @@
 resource "aws_vpc" "test" {
-}
-
-resource "aws_vpc_ipv4_cidr_block_association" "secondary_cidr" {
-  vpc_id     = aws_vpc.test.id
-  cidr_block = "172.30.0.0/16"
-}
-
-resource "aws_vpc_ipv4_cidr_block_association" "cidr2" {
-  vpc_id     = aws_vpc.test.id
   cidr_block = "172.27.0.0/16"
+  assign_generated_ipv6_cidr_block = "false"
+  instance_tenancy	= "default"
+
+  tags = {
+    Name = "${var.tags}"
+  }
 }
 
 resource "aws_subnet" "test-a" {
   vpc_id = aws_vpc.test.id
-  cidr_block = "172.28.3.0/24"
+  cidr_block = "172.27.1.0/24"
   availability_zone = "ap-northeast-2a"
   tags = {
 	Name = "${var.tags}-subnet"
@@ -22,7 +19,7 @@ resource "aws_subnet" "test-a" {
 
 resource "aws_subnet" "test-c" {
   vpc_id = aws_vpc.test.id
-  cidr_block = "172.28.4.0/24"
+  cidr_block = "172.27.2.0/24"
   availability_zone = "ap-northeast-2c"
   tags = {
 	Name = "${var.tags}-subnet"
