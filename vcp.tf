@@ -1,11 +1,4 @@
 resource "aws_vpc" "test" {
-  cidr_block = "172.28.0.0/16"
-  assign_generated_ipv6_cidr_block = "false"
-  instance_tenancy	= "default"
-
-  tags = {
-    Name = var.tags
-  }
 }
 
 resource "aws_vpc_ipv4_cidr_block_association" "secondary_cidr" {
