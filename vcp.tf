@@ -1,5 +1,5 @@
 resource "aws_vpc" "test" {
-  cidr_block = "172.28.0.0/16"
+  cidr_block = "172.28.0.0/16,172.30.0.0/16"
   assign_generated_ipv6_cidr_block = "false"
   instance_tenancy	= "default"
 
