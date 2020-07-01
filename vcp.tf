@@ -13,7 +13,7 @@ resource "aws_vpc_ipv4_cidr_block_association" "secondary_cidr" {
   cidr_block = "172.30.0.0/16"
 }
 
-resource "aws_vpc_ipv4_cidr_block_association" "secondary_cidr" {
+resource "aws_vpc_ipv4_cidr_block_association" "cidr2" {
   vpc_id     = aws_vpc.test.id
   cidr_block = "172.27.0.0/16"
 }
