@@ -4,7 +4,7 @@ resource "aws_vpc" "test" {
   instance_tenancy	= "default"
 
   tags = {
-    Name = "${var.tags}"
+    Name = var.tags
   }
 }
 
@@ -13,7 +13,7 @@ resource "aws_subnet" "test-a" {
   cidr_block = "172.27.1.0/24"
   availability_zone = "ap-northeast-2a"
   tags = {
-	Name = "${var.tags}-subnet"
+	Name = var.tags"-subnet"
   }
 }
 
@@ -22,6 +22,6 @@ resource "aws_subnet" "test-c" {
   cidr_block = "172.27.2.0/24"
   availability_zone = "ap-northeast-2c"
   tags = {
-	Name = "${var.tags}-subnet"
+	Name = var.tags"-subnet"
   }  
 }
