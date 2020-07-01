@@ -1,5 +1,5 @@
 provider aws {
-  access_key = "AKIAICCQTSQ4VSEZCVWA"
-  secret_key = "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"
-  region     = "ap-northeast-2"
+  access_key = var.AWS_ACCESS_KEY_ID
+  secret_key = var.AWS_SECRET_ACCESS_KEY
+  region     = var.aws_region
 }
