@@ -1,4 +1,4 @@
-resource aws_default_network_acl "default" {
+resource "aws_default_network_acl" "default" {
   default_network_acl_id = aws_vpc.tfe-poc.default_network_acl_id
 
   ingress {
