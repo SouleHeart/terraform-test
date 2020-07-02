@@ -9,19 +9,21 @@ resource "aws_vpc" "tfe-poc" {
 }
 
 resource "aws_subnet" "tfe-poc-2a" {
-  vpc_id = aws_vpc.test.id
+  vpc_id = aws_vpc.tfe-poc.id
   cidr_block = "172.27.1.0/24"
   availability_zone = "ap-northeast-2a"
+  
   tags = {
-	Name = "${var.tags}-subnet"
+	  Name = "${var.tags}-subnet"
   }
 }
 
 resource "aws_subnet" "tfe-poc-2c" {
-  vpc_id = aws_vpc.test.id
+  vpc_id = aws_vpc.tfe-poc.id
   cidr_block = "172.27.2.0/24"
   availability_zone = "ap-northeast-2c"
+  
   tags = {
-	Name = "${var.tags}-subnet"
+	  Name = "${var.tags}-subnet"
   }  
 }
