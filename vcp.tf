@@ -1,4 +1,4 @@
-resource "aws_vpc" "test" {
+resource aws_vpc "test" {
   cidr_block = "172.27.0.0/16"
   assign_generated_ipv6_cidr_block = "false"
   instance_tenancy	= "default"
